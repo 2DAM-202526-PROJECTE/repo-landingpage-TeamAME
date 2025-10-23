@@ -1,0 +1,20 @@
+{
+  "name": "projectelandingpage",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base=/projecteLandingPage/",
+    "preview": "vite preview --base=/projecteLandingPage/"
+  },
+  "devDependencies": {
+    "vite": "^7.1.6"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "alpinejs": "^3.15.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
+  }
+}
