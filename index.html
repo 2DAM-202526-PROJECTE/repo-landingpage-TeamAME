@@ -13,8 +13,9 @@
     <script type="module" src="/src/main.js"></script>
 
 
+
     <!-- Inici Hero Section - Referencia: https://merakiui.com/components/9f1392a8-fa44-4b6b-8e68-dfd5ffc06f76/preview -->
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white dark:bg-[#000000]">
         <nav x-data="{ isOpen: false }" class="container p-6 mx-auto lg:flex lg:justify-between lg:items-center">
             <div class="flex items-center justify-between">
                 <a href="#">
@@ -24,7 +25,8 @@
                 <!-- Mobile menu button -->
                 <div class="flex lg:hidden">
                     <button x-cloak @click="isOpen = !isOpen" type="button"
-                        class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                        class="text-gray-500 dark:text-gray-200 hover:text-red-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+
                         aria-label="toggle menu">
                         <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -41,6 +43,7 @@
 
             <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
             <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+
                 class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:bg-transparent lg:dark:bg-transparent lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
                 <div class="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
                     <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
@@ -267,7 +270,7 @@
     </section>
 
     <!-- Pricing Section -->
-    <div class="bg-white dark:bg-gray-900">
+    <div class="bg-white dark:bg-[#000000]">
         <div class="container px-6 py-8 mx-auto">
             <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Pricing
                 Plan</h1>
@@ -293,7 +296,7 @@
                     </button>
                 </div>
 
-                <div class="w-full p-8 space-y-8 text-center bg-blue-600 rounded-lg">
+                <div class="w-full p-8 space-y-8 text-center bg-[#FFA500] rounded-lg">
                     <p class="font-medium text-gray-200 uppercase">Premium</p>
 
                     <h2 class="text-5xl font-bold text-white uppercase dark:text-gray-100">
@@ -325,6 +328,38 @@
             </div>
         </div>
     </div>
+
+    <!-- CTA Section -->
+    <section class="bg-gray-100 dark:bg-[#000000] lg:py-12 lg:flex lg:justify-center">
+        <div
+            class="overflow-hidden bg-white dark:bg-[#000000] lg:mx-8 lg:flex lg:max-w-6xl lg:w-full lg:shadow-md lg:rounded-xl">
+            <div class="lg:w-1/2">
+                <div class="h-64 bg-cover lg:h-full"
+                    style="background-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+                </div>
+            </div>
+
+            <div class="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
+                <h2 class="text-2xl font-semibold text-gray-800 dark:text-white md:text-3xl">
+                    Build Your New <span class="text-[#FFA500]">Idea</span>
+                </h2>
+
+                <p class="mt-4 text-gray-500 dark:text-gray-300">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Quidem modi reprehenderit vitae exercitationem aliquid dolores ullam temporibus enim expedita
+                    aperiam
+                    mollitia iure consectetur dicta tenetur, porro consequuntur saepe accusantium consequatur.
+                </p>
+
+                <div class="inline-flex w-full mt-6 sm:w-auto">
+                    <a href="#"
+                        class="inline-flex items-center justify-center w-full px-6 py-2 text-sm text-white duration-300 bg-[#FFA500] rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                        <span class="text font-bold">Start Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="bg-white dark:bg-gray-900">
         <div class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
@@ -402,7 +437,7 @@
     </section>
 
     <!-- Team Section -->
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white dark:bg-[#000000]">
         <div class="container px-6 py-8 mx-auto">
             <h2 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Our Team
             </h2>
@@ -456,7 +491,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white dark:bg-[#000000]">
         <div class="container px-6 py-12 mx-auto">
             <div>
                 <p class="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
@@ -573,7 +608,7 @@
 
 
     <!-- FAQ Section -->
-    <section class="bg-white dark:bg-gray-900">
+    <section class="bg-white dark:bg-[#000000]">
         <div class="container px-6 py-10 mx-auto">
             <h1 class="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">FAQ's</h1>
 
@@ -651,21 +686,78 @@
         </div>
     </section>
 
-    <footer class="bg-white dark:bg-gray-900">
-        <div class="container p-6 mx-auto">
-            <div class="lg:flex">
-                <div class="w-full -mx-6 lg:w-2/5">
-                    <div class="px-6">
-                        <a href="#">
-                            <img class="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
-                        </a>
+    <footer class="bg-white dark:bg-[#000000]">
+    <div class="container p-6 mx-auto">
+        <div class="lg:flex">
+            <div class="w-full -mx-6 lg:w-2/5">
+                <div class="px-6">
+                    <a href="#">
+                        <img class="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt="Logo de l'empresa">
+                    </a>
 
-                        <p class="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out
-                            on new tips, tutorials, and more.</p>
+                    <p class="max-w-sm mt-4 text-gray-500 dark:text-gray-400">Uneix-te a la nostra comunitat i no et
+                        perdis les últimes novetats, tutorials i consells.</p>
 
-                        <div class="flex mt-6 -mx-2">
+                    <div
+                        class="w-full max-w-sm mx-auto mt-6 bg-transparent border rounded-md dark:border-gray-700 focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 dark:focus-within:border-blue-300 focus-within:ring-opacity-40">
+                        <form class="flex flex-col w-full md:flex-row">
+                            <input type="email" placeholder="El teu email"
+                                class="flex-1 h-10 px-4 py-2 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0" />
+
+                            <button type="button"
+                                class="h-10 px-4 py-2 m-1 font-bold text-white transition-colors duration-300 transform bg-[#FFA500] rounded-md hover:bg-orange-400 focus:outline-none focus:bg-orange-400">
+                                Subscriu-t'hi
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mt-6 lg:mt-0 lg:flex-1">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <div>
+                        <h3 class="font-semibold text-[#FFA500] uppercase">Sobre Nosaltres</h3>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Empresa</a>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Comunitat</a>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Feina</a>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-[#FFA500] uppercase">Blog</h3>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Tecnologia</a>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Música</a>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Videos</a>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-[#FFA500] uppercase">Productes</h3>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Mega
+                            Cloud</a>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Aperion
+                            UI</a>
+                        <a href="#"
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Meraki
+                            UI</a>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-[#FFA500] uppercase">Contacte</h3>
+                        <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400">+34 612093487</span>
+                        <span
+                            class="block mt-2 text-sm text-gray-600 dark:text-gray-400">AME.SL@iesebre.com</span>
+                        
+                        <div class="flex mt-4 -mx-2">
                             <a href="#"
-                                class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                                class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-[#FFA500] dark:hover:text-[#FFA500]"
                                 aria-label="Reddit">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -676,7 +768,7 @@
                             </a>
 
                             <a href="#"
-                                class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                                class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-[#FFA500] dark:hover:text-[#FFA500]"
                                 aria-label="Facebook">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -686,8 +778,8 @@
                                 </svg>
                             </a>
 
-                            <a href="#"
-                                class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                            <a href="https://github.com/2DAM-202526-PROJECTE/repo-landingpage-TeamAME" target="_blank" rel="noopener noreferrer"
+                                class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-[#FFA500] dark:hover:text-[#FFA500]"
                                 aria-label="Github">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -699,59 +791,26 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-6 lg:mt-0 lg:flex-1">
-                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        <div>
-                            <h3 class="text-gray-700 uppercase dark:text-white">About</h3>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Company</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">community</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
-                        </div>
-
-                        <div>
-                            <h3 class="text-gray-700 uppercase dark:text-white">Blog</h3>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Tec</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Music</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Videos</a>
-                        </div>
-
-                        <div>
-                            <h3 class="text-gray-700 uppercase dark:text-white">Products</h3>
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mega
-                                cloud</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Aperion
-                                UI</a>
-                            <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Meraki
-                                UI</a>
-                        </div>
-
-                        <div>
-                            <h3 class="text-gray-700 uppercase dark:text-white">Contact</h3>
-                            <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+1 526 654
-                                8965</span>
-                            <span
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
-
-            <div>
-                <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
             </div>
         </div>
-    </footer>
+
+        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
+
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+    <p class="text-sm text-gray-500 dark:text-gray-400">© Projecte DAM 2025 - Tots els drets reservats</p>
+
+    <div class="flex mt-3 -mx-2 sm:mt-0">
+        <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Privacy Policy">
+            Política de Privacitat
+        </a>
+
+        <a href="#" class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Terms of Service">
+            Termes i Condicions
+        </a>
+    </div>
+</div>
+    </div>
+</footer>
 
 </body>
 
