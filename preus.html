@@ -1,71 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preus</title>
 </head>
+
 <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
-     <div class="bg-white dark:bg-[#000000]">
-        <div class="container px-6 py-8 mx-auto">
-            <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Pricing
-                Plan</h1>
 
-            <p class="max-w-2xl mx-auto mt-4 text-center text-gray-500 xl:mt-6 dark:text-gray-300">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quas magni libero consequuntur
-                voluptatum velit amet id repudiandae ea, deleniti laborum in neque eveniet.
-            </p>
+    <section class="bg-white dark:bg-[#000000]">
+        <nav x-data="{ isOpen: false }" class="container p-6 mx-auto lg:flex lg:justify-between lg:items-center">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
+                </a>
 
-            <div class="grid grid-cols-1 gap-8 mt-6 xl:mt-12 xl:gap-12 md:grid-cols-2 lg:grid-cols-3">
-                <div class="w-full p-8 space-y-8 text-center border border-gray-200 rounded-lg dark:border-gray-700">
-                    <p class="font-medium text-gray-500 uppercase dark:text-gray-300">Free</p>
+                <!-- Mobile menu button -->
+                <div class="flex lg:hidden">
+                    <button x-cloak @click="isOpen = !isOpen" type="button"
+                        class="text-gray-500 dark:text-gray-200 hover:text-red-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                        aria-label="toggle menu">
+                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                        </svg>
 
-                    <h2 class="text-4xl font-semibold text-gray-800 uppercase dark:text-gray-100">
-                        $0
-                    </h2>
-
-                    <p class="font-medium text-gray-500 dark:text-gray-300">Life time</p>
-
-                    <button
-                        class="w-full px-4 py-2 mt-10 tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                        Start Now
-                    </button>
-                </div>
-
-                <div class="w-full p-8 space-y-8 text-center bg-[#FFA500] rounded-lg">
-                    <p class="font-medium text-gray-200 uppercase">Premium</p>
-
-                    <h2 class="text-5xl font-bold text-white uppercase dark:text-gray-100">
-                        $40
-                    </h2>
-
-                    <p class="font-medium text-gray-200">Per month</p>
-
-                    <button
-                        class="w-full px-4 py-2 mt-10 tracking-wide text-blue-500 capitalize transition-colors duration-300 transform bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:ring focus:ring-gray-200 focus:ring-opacity-80">
-                        Start Now
-                    </button>
-                </div>
-
-                <div class="w-full p-8 space-y-8 text-center border border-gray-200 rounded-lg dark:border-gray-700">
-                    <p class="font-medium text-gray-500 uppercase dark:text-gray-300">Enterprise</p>
-
-                    <h2 class="text-4xl font-semibold text-gray-800 uppercase dark:text-gray-100">
-                        $100
-                    </h2>
-
-                    <p class="font-medium text-gray-500 dark:text-gray-300">Life time</p>
-
-                    <button
-                        class="w-full px-4 py-2 mt-10 tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                        Start Now
+                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
                 </div>
             </div>
+
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+                class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:bg-transparent lg:dark:bg-transparent lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+                <div class="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                        href="index.html">Inici</a>
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                        href="components.html">Components</a>
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                        href="preus.html">Preus</a>
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                        href="contact.html">Contacte</a>
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                        href="faq.html">FAQ/Blog</a>
+                </div>
+
+                <a class="block px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border rounded-md dark:hover:bg-gray-700 dark:text-white lg:mt-0 hover:bg-gray-100 lg:w-auto"
+                    href="registre.html">
+                    Registrar-se
+                </a>
+            </div>
+        </nav>
+    </section>
+
+
+    <!-- Pricing section -->
+    <section x-data="{ plan: 'monthly' }" class="bg-white dark:bg-[#000000]">
+        <!-- Toggle -->
+        <div class="flex items-center justify-center">
+            <div class="inline-flex items-center rounded-full p-1 bg-gray-800/60 dark:bg-gray-900/60">
+                <button @click="plan='monthly'"
+                    :class="plan==='monthly' ? 'bg-[#FFA500] text-black' : 'text-white'"
+                    class="px-5 py-2 rounded-full font-semibold transition-all duration-300" aria-pressed="true">
+                    Mensual
+                </button>
+
+                <button @click="plan='annual'"
+                    :class="plan==='annual' ? 'bg-[#FFA500] text-black' : 'text-white'"
+                    class="px-5 py-2 rounded-full font-semibold transition-all duration-300">
+                    Anual
+                </button>
+            </div>
         </div>
-    </div>
+
+        <!-- Apartats: Free + Basic + Premium -->
+        <div class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-3">
+            <!-- Free / Gratuït -->
+            <div
+                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-[#000000] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Gratuït</h3>
+                        <p class="mt-1 text-xs text-gray-300">Accés bàsic</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-extrabold text-white">0,00<span class="text-sm font-medium ml-1"> €/mes</span></div>
+                        <div class="text-xs text-gray-400 mt-1">Sense cost</div>
+                    </div>
+                </div>
+
+                <ul class="mt-4 space-y-2 text-gray-200 text-sm">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Accés limitat al catàleg</span>
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Anuncis inclosos</span>
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Suport comunitari</span>
+                    </li>
+                </ul>
+
+                <div class="mt-6">
+                    <button
+                        class="w-full px-3 py-2 text-sm font-semibold rounded-full bg-transparent border border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-black transition-colors duration-200">
+                        Comença gratis
+                    </button>
+
+                    <a href="#" class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Fes upgrade després</a>
+                </div>
+            </div>
+
+            <!-- Basic -->
+            <div
+                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-[#000000] hover:scale-102 transform transition-all duration-300 ease-in-out">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Basic</h3>
+                        <p class="mt-1 text-xs text-gray-300">El bàsic per començar</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-extrabold text-white">
+                            <span x-html="plan==='monthly' ? '4,99<span class=&quot;text-sm font-medium ml-1&quot;> €/mes</span>' : '49,99<span class=&quot;text-sm font-medium ml-1&quot;> €/any</span>'"></span>
+                        </div>
+                        <div class="text-xs text-gray-400 mt-1">IVA inclòs</div>
+                    </div>
+                </div>
+
+                <ul class="mt-4 space-y-2 text-gray-200 text-sm">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Sense anuncis</span>
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Accés a la llista bàsica de contingut</span>
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Suport via email</span>
+                    </li>
+                </ul>
+
+                <div class="mt-6">
+                    <button
+                        class="w-full px-3 py-2 text-sm font-semibold rounded-full bg-[#FFA500] text-black hover:brightness-95 transition-colors duration-200">
+                        Començar prova gratuïta de 7 dies
+                    </button>
+
+                    <a href="#" class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Saltar la prova gratuïta</a>
+                </div>
+            </div>
+
+            <!-- Premium -->
+            <div
+                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-[#000000] hover:scale-102 transform transition-all duration-300 ease-in-out">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div class="px-2 py-1 text-xs font-bold text-black bg-[#FFA500] rounded-full">LO MÉS POPULAR</div>
+                </div>
+
+                <div class="flex items-center justify-between mt-2">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Premium</h3>
+                        <p class="mt-1 text-xs text-gray-300">Tot el catàleg i més</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-extrabold text-white">
+                            <span x-html="plan==='monthly' ? '6,49<span class=&quot;text-sm font-medium ml-1&quot;> €/mes</span>' : '64,99<span class=&quot;text-sm font-medium ml-1&quot;> €/any</span>'"></span>
+                        </div>
+                        <div class="text-xs text-gray-400 mt-1">IVA inclòs</div>
+                    </div>
+                </div>
+
+                <ul class="mt-4 space-y-2 text-gray-200 text-sm">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Sense anuncis i accés a tot el catàleg</span>
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Transmissió a fins a 4 dispositius</span>
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <span>Descàrrega de vídeos en HD</span>
+                    </li>
+                </ul>
+
+                <div class="mt-6">
+                    <button
+                        class="w-full px-3 py-2 text-sm font-semibold rounded-full bg-[#FFA500] text-black hover:brightness-95 transition-colors duration-200">
+                        Començar prova gratuïta de 7 dies
+                    </button>
+
+                    <a href="#" class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Saltar la prova gratuïta</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Note / small print -->
+        <p class="mt-6 text-xs text-gray-400 max-w-3xl mx-auto">
+            Promoció de prova gratuïta vàlida per a nous usuaris. El pla es renova automàticament al final del període.
+        </p>
+    </section>
 
     <footer class="bg-white dark:bg-[#000000]">
         <div class="container p-6 mx-auto">
@@ -199,4 +352,5 @@
     </footer>
 
 </body>
+
 </html>
