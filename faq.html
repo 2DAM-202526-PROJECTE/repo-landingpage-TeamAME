@@ -66,7 +66,7 @@
 
             <hr class="my-6 border-gray-200 dark:border-gray-700">
 
-            <div x-data="{ 
+            <div x-data="{
                 openFaq: null,
                 faqs: [
                     {
@@ -100,7 +100,7 @@
                     <div>
                         <button class="flex items-center focus:outline-none"
                             @click="openFaq === faq.id ? openFaq = null : openFaq = faq.id">
-                            <svg x-show="openFaq === faq.id" class="flex-shrink-0 w-6 h-6 text-blue-500"
+                            <svg x-show="openFaq === faq.id" class="flex-shrink-0 w-6 h-6 text-[#FFA500]"
                                 x-transition:enter="transition transform ease-in-out duration-300"
                                 x-transition:enter-start="scale-75" x-transition:enter-end="scale-100" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +110,7 @@
                             <svg x-show="openFaq !== faq.id" xmlns="http://www.w3.org/2000/svg"
                                 x-transition:enter="transition transform ease-in-out duration-300"
                                 x-transition:enter-start="scale-75" x-transition:enter-end="scale-100"
-                                class="flex-shrink-0 w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24"
+                                class="flex-shrink-0 w-6 h-6 text-[#FFA500]" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 4v16m8-8H4" />
@@ -127,7 +127,7 @@
                             x-transition:leave-start="translate-y-0 opacity-100"
                             x-transition:leave-end="-translate-y-4 opacity-0"
                             class="flex mt-8 md:mx-10 transition-all duration-200 ease-in-out">
-                            <span class="border border-blue-500"></span>
+                            <span class="border border-[#FFA500]"></span>
                             <p class="max-w-3xl px-4 text-gray-500 dark:text-gray-300" x-text="faq.resposta"></p>
                         </div>
 
@@ -158,7 +158,7 @@
                                     class="flex-1 h-10 px-4 py-2 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0" />
 
                                 <button type="button"
-                                    class="h-10 px-4 py-2 m-1 font-bold text-white transition-colors duration-300 transform bg-[#FFA500] rounded-md hover:bg-orange-400 focus:outline-none focus:bg-orange-400">
+                                    class="h-10 px-4 py-2 m-1 font-semibold text-black transition-colors duration-300 transform bg-[#FFA500] rounded-md hover:bg-orange-500 focus:outline-none focus:ring">
                                     Subscriu-t'hi
                                 </button>
                             </form>
@@ -172,33 +172,33 @@
                         <div>
                             <h3 class="font-semibold text-[#FFA500] uppercase">Sobre Nosaltres</h3>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Empresa</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Empresa</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Comunitat</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Comunitat</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Feina</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Feina</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-[#FFA500] uppercase">Blog</h3>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Tecnologia</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Tecnologia</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Música</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Música</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Videos</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Videos</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-[#FFA500] uppercase">Productes</h3>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Mega
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Mega
                                 Cloud</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Aperion
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Aperion
                                 UI</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Meraki
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Meraki
                                 UI</a>
                         </div>
 
@@ -268,6 +268,9 @@
             </div>
         </div>
     </footer>
+
+</body>
+</html>
 
 </body>
 
