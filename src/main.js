@@ -1,6 +1,8 @@
 import './style.css'
+import Alpine from 'alpinejs'
+import CookieConsent from './cookie.js'
 
-import Alpine  from 'alpinejs'
+Alpine.plugin(CookieConsent)
 
 window.Alpine = Alpine
 Alpine.start()
