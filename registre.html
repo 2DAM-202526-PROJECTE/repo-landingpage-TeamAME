@@ -38,18 +38,18 @@
             <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
                 class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:bg-transparent lg:dark:bg-transparent lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
                 <div class="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
-                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-orange-500 hover:text-blue-500"
                         href="index.html">Inici</a>
-                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-orange-500 hover:text-blue-500"
                         href="preus.html">Preus</a>
-                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-orange-500 hover:text-blue-500"
                         href="contact.html">Contacte</a>
-                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-blue-400 hover:text-blue-500"
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-orange-500 hover:text-blue-500"
                         href="faq.html">FAQ/Blog</a>
                 </div>
 
-                <a class="block px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border rounded-md dark:hover:bg-gray-700 dark:text-white lg:mt-0 hover:bg-gray-100 lg:w-auto"
-                    href="contact.html">
+                <a class="block px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border-[#FFA500] border rounded-md dark:hover:bg-orange-500 hover:text-black dark:text-white lg:mt-0 hover:bg-gray-100 lg:w-auto"
+                    href="registre.html">
                     Registrar-se
                 </a>
             </div>
@@ -65,15 +65,15 @@
                 <div class="inline-flex rounded-full bg-gray-800/60 p-1">
                     <button
                         @click="view='register'"
-                        :class="view==='register' ? 'bg-blue-500 text-white' : 'text-white'"
-                        class="px-5 py-2 rounded-full font-semibold transition-all duration-300">
+                        :class="view==='register' ? 'bg-[#FFA500] text-black' : 'text-[#FFA500] hover:bg-orange-500 hover:text-black'"
+                        class="px-5 py-2 rounded-full font-bold transition-all duration-300">
                         Registrar-se
                     </button>
 
                     <button
                         @click="view='login'"
-                        :class="view==='login' ? 'bg-blue-500 text-white' : 'text-white'"
-                        class="px-5 py-2 rounded-full font-semibold transition-all duration-300">
+                        :class="view==='login' ? 'bg-[#FFA500] text-black' : 'text-[#FFA500] hover:bg-orange-500 hover:text-black'"
+                        class="px-5 py-2 rounded-full font-bold transition-all duration-300">
                         Iniciar sessió
                     </button>
                 </div>
@@ -90,7 +90,7 @@
                     x-transition:leave="transition transform ease-in duration-200"
                     x-transition:leave-start="opacity-100 scale-100"
                     x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                    class="bg-black border-2 border-blue-500 rounded-xl p-6 shadow-lg">
+                    class="bg-[#1a1a1a] border-2 border-[#FFA500] rounded-xl p-6 shadow-lg">
                     <h2 class="text-xl font-semibold text-white">Crea el teu compte</h2>
                     <p class="text-sm text-gray-300 mt-1">Obté una prova gratuïta de 7 dies</p>
 
@@ -98,29 +98,29 @@
                         <div>
                             <label for="r-username" class="text-sm text-gray-300">Nom d'usuari</label>
                             <input id="r-username" type="text" placeholder="Nom d'usuari"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-black border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <div>
                             <label for="r-email" class="text-sm text-gray-300">Correu electrònic</label>
                             <input id="r-email" type="email" placeholder="correu@exemple.com"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-black border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <div>
                             <label for="r-password" class="text-sm text-gray-300">Contrasenya</label>
                             <input id="r-password" type="password" placeholder="Contrasenya"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-black border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <button type="submit"
-                            class="w-full mt-2 px-4 py-2 rounded-full bg-blue-500 text-white font-semibold hover:brightness-95 transition">
+                            class="w-full mt-2 px-4 py-2 rounded-full bg-[#FFA500] text-black font-bold hover:bg-orange-500 transition">
                             Registrar-se i provar 7 dies gratis
                         </button>
 
                         <p class="text-center text-sm text-gray-400 mt-2">
                             Ja tens compte?
-                            <button type="button" @click="view='login'" class="font-semibold text-white underline ml-1">Inicia sessió</button>
+                            <button type="button" @click="view='login'" class="font-semibold text-white hover:text-orange-500 underline ml-1">Inicia sessió</button>
                         </p>
                     </form>
                 </div>
@@ -134,7 +134,7 @@
                     x-transition:leave="transition transform ease-in duration-200"
                     x-transition:leave-start="opacity-100 scale-100"
                     x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                    class="bg-black border-2 border-blue-500 rounded-xl p-6 shadow-lg">
+                    class="bg-black border-2 border-[#FFA500] rounded-xl p-6 shadow-lg">
                     <h2 class="text-xl font-semibold text-white">Inicia sessió</h2>
                     <p class="text-sm text-gray-300 mt-1">Benvingut de nou — accedeix al teu compte</p>
 
@@ -142,19 +142,19 @@
                         <div>
                             <label for="l-email" class="text-sm text-gray-300">Correu electrònic</label>
                             <input id="l-email" type="email" placeholder="correu@exemple.com"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <div>
                             <label for="l-password" class="text-sm text-gray-300">Contrasenya</label>
                             <input id="l-password" type="password" placeholder="Contrasenya"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <div class="flex items-center justify-between">
-                            <a href="#" class="text-sm text-gray-400 hover:text-white">Has oblidat la contrasenya?</a>
+                            <a href="#" class="text-sm text-gray-400 hover:text-orange-600">Has oblidat la contrasenya?</a>
                             <button type="submit"
-                                class="px-4 py-2 rounded-full bg-blue-500 text-white font-semibold hover:brightness-95 transition">
+                                class="px-4 py-2 rounded-full bg-[#FFA500] text-black font-semibold hover:bg-orange-500 transition">
                                 Entrar
                             </button>
                         </div>
@@ -162,14 +162,14 @@
                         <div class="pt-2 border-t border-gray-800 mt-2">
                             <p class="text-center text-sm text-gray-400">O inicia sessió amb</p>
                             <div class="flex gap-3 justify-center mt-3">
-                                <button type="button" class="px-3 py-2 rounded-md bg-gray-800 text-white border border-gray-700 hover:bg-gray-700 transition">Google</button>
-                                <button type="button" class="px-3 py-2 rounded-md bg-gray-800 text-white border border-gray-700 hover:bg-gray-700 transition">Apple</button>
+                                <button type="button" class="px-3 py-2 rounded-md bg-[#FFA500] text-black border  hover:bg-orange-500 transition">Google</button>
+                                <button type="button" class="px-3 py-2 rounded-md bg-[#FFA500] text-black border  hover:bg-orange-500 transition">Apple</button>
                             </div>
                         </div>
 
                         <p class="text-center text-sm text-gray-400 mt-3">
                             Encara no tens compte?
-                            <button type="button" @click="view='register'" class="font-semibold text-white underline ml-1">Registrar-se</button>
+                            <button type="button" @click="view='login'" class="font-semibold text-white hover:text-orange-500 underline ml-1">Registrar-se</button>
                         </p>
                     </form>
                 </div>
@@ -191,13 +191,13 @@
                             perdis les últimes novetats, tutorials i consells.</p>
 
                         <div
-                            class="w-full max-w-sm mx-auto mt-6 bg-transparent border rounded-md dark:border-gray-700 focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 dark:focus-within:border-blue-300 focus-within:ring-opacity-40">
+                            class="w-full max-w-sm mx-auto mt-6 bg-transparent border rounded-md dark:border-gray-700 focus-within:border-blue-400 focus-within:ring focus-within:ring-orange-500 dark:focus-within:border-orange-500">
                             <form class="flex flex-col w-full md:flex-row">
                                 <input type="email" placeholder="El teu email"
                                     class="flex-1 h-10 px-4 py-2 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0" />
 
                                 <button type="button"
-                                    class="h-10 px-4 py-2 m-1 font-bold text-white transition-colors duration-300 transform bg-[#FFA500] rounded-md hover:bg-orange-400 focus:outline-none focus:bg-orange-400">
+                                    class="h-10 px-4 py-2 m-1 font-semibold text-black transition-colors duration-300 transform bg-[#FFA500] rounded-md hover:bg-orange-500 focus:outline-none focus:ring focus:bg-orange-500">
                                     Subscriu-t'hi
                                 </button>
                             </form>
@@ -211,33 +211,33 @@
                         <div>
                             <h3 class="font-semibold text-[#FFA500] uppercase">Sobre Nosaltres</h3>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Empresa</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Empresa</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Comunitat</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Comunitat</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Feina</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Feina</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-[#FFA500] uppercase">Blog</h3>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Tecnologia</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Tecnologia</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Música</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Música</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Videos</a>
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Videos</a>
                         </div>
 
                         <div>
                             <h3 class="font-semibold text-[#FFA500] uppercase">Productes</h3>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Mega
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Mega
                                 Cloud</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Aperion
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Aperion
                                 UI</a>
                             <a href="#"
-                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:underline">Meraki
+                                class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-[#FFA500] hover:underline">Meraki
                                 UI</a>
                         </div>
 
@@ -293,13 +293,13 @@
 
                 <div class="flex mt-3 -mx-2 sm:mt-0">
                     <a href="#"
-                        class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
+                        class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-orange-500"
                         aria-label="Privacy Policy">
                         Política de Privacitat
                     </a>
 
                     <a href="#"
-                        class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
+                        class="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-orange-500"
                         aria-label="Terms of Service">
                         Termes i Condicions
                     </a>
