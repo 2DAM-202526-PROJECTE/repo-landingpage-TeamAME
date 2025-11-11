@@ -9,7 +9,8 @@
     "preview": "vite preview --base=/repo-landingpage-TeamAME/"
   },
   "devDependencies": {
-    "vite": "^7.1.12"
+    "vite": "^7.1.12",
+    "vite-plugin-handlebars": "^2.0.0"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.13",
