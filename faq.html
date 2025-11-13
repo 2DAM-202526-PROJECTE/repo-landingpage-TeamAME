@@ -98,7 +98,7 @@
                     <div>
                         <button class="flex items-center focus:outline-none"
                             @click="openFaq === faq.id ? openFaq = null : openFaq = faq.id">
-                            <svg x-show="openFaq === faq.id" class="flex-shrink-0 w-6 h-6 text-[#FFA500]"
+                            <svg x-show="openFaq === faq.id" class="shrink-0 w-6 h-6 text-[#FFA500]"
                                 x-transition:enter="transition transform ease-in-out duration-300"
                                 x-transition:enter-start="scale-75" x-transition:enter-end="scale-100" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +108,7 @@
                             <svg x-show="openFaq !== faq.id" xmlns="http://www.w3.org/2000/svg"
                                 x-transition:enter="transition transform ease-in-out duration-300"
                                 x-transition:enter-start="scale-75" x-transition:enter-end="scale-100"
-                                class="flex-shrink-0 w-6 h-6 text-[#FFA500]" fill="none" viewBox="0 0 24 24"
+                                class="shrink-0 w-6 h-6 text-[#FFA500]" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 4v16m8-8H4" />
