@@ -11,7 +11,7 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
 
-    <section class="bg-white dark:bg-[#000000]">
+   <!-- <section class="bg-white dark:bg-[#000000]"> -->
         <nav x-data="{ isOpen: false }" class="container p-6 mx-auto lg:flex lg:justify-between lg:items-center">
             <div class="flex items-center justify-between">
                 <a href="index.html">
@@ -60,10 +60,10 @@
 
 
     <!-- Pricing section -->
-    <section x-data="{ plan: 'monthly' }" class="bg-white dark:bg-[#000000]">
+    <section x-data="{ plan: 'monthly' }" class="bg-white dark:bg-transparent">
         <!-- Toggle -->
         <div class="flex items-center justify-center">
-            <div class="inline-flex items-center rounded-full p-1 bg-gray-800/60 dark:bg-gray-900/60">
+            <div class="inline-flex items-center rounded-full p-1 bg-gray-800/60 dark:bg-transparent">
                 <button @click="plan='monthly'"
                     :class="plan==='monthly' ? 'bg-[#FFA500] text-black' : 'text-[#FFA500] hover:text-black hover:bg-orange-500'"
                     class="px-5 py-2 rounded-full font-semibold transition-all duration-300" aria-pressed="true">
@@ -82,7 +82,7 @@
         <div class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-3">
             <!-- Free / Gratuït -->
             <div
-                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-[#000000] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-transparent hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
                 <div class="flex items-center justify-between">
                     <div>
                         <h3 class="text-lg font-semibold text-white">Gratuït</h3>
@@ -123,7 +123,7 @@
 
             <!-- Basic -->
             <div
-                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-[#000000] hover:scale-102 transform transition-all duration-300 ease-in-out">
+                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-transparent hover:scale-102 transform transition-all duration-300 ease-in-out">
                 <div class="flex items-center justify-between">
                     <div>
                         <h3 class="text-lg font-semibold text-white">Basic</h3>
@@ -166,7 +166,7 @@
 
             <!-- Premium -->
             <div
-                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-[#000000] hover:scale-102 transform transition-all duration-300 ease-in-out">
+                class="relative p-6 rounded-lg border-2 border-[#FFA500] bg-transparent hover:scale-102 transform transition-all duration-300 ease-in-out">
                 <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <div class="px-2 py-1 text-xs font-bold text-black bg-[#FFA500] rounded-full">LO MÉS POPULAR</div>
                 </div>
