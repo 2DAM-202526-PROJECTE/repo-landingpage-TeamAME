@@ -9,17 +9,60 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
 
-    <!--Header Section-->
-    {{> header}}
-    
-    <!-- Register/Login Section -->
+    <section class="bg-white dark:bg-[#000000]">
+        <nav x-data="{ isOpen: false }" class="container p-6 mx-auto lg:flex lg:justify-between lg:items-center">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
+                </a>
+
+                <!-- Mobile menu button -->
+                <div class="flex lg:hidden">
+                    <button x-cloak @click="isOpen = !isOpen" type="button"
+                        class="text-gray-500 dark:text-gray-200 hover:text-red-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                        aria-label="toggle menu">
+                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                        </svg>
+
+                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+                class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:shadow-none dark:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:bg-transparent lg:dark:bg-transparent lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+                <div class="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0">
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-orange-500 hover:text-blue-500"
+                        href="index.html">Inici</a>
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-orange-500 hover:text-blue-500"
+                        href="preus.html">Preus</a>
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-orange-500 hover:text-blue-500"
+                        href="contact.html">Contacte</a>
+                    <a class="text-gray-700 lg:mx-6 dark:text-gray-200 dark:hover:text-orange-500 hover:text-blue-500"
+                        href="faq.html">FAQ/Blog</a>
+                </div>
+
+                <a class="block px-5 py-2 mt-4 text-sm text-center text-gray-700 capitalize transition-colors duration-300 transform border-[#FFA500] border rounded-md dark:hover:bg-orange-500 hover:text-black dark:text-white lg:mt-0 hover:bg-gray-100 lg:w-auto"
+                    href="registre.html">
+                    Registrar-se
+                </a>
+            </div>
+        </nav>
+    </section>
+
     <section class="bg-white dark:bg-[#000000]">
         <div class="container px-6 py-10 mx-auto" x-data="{ view: 'register' }">
             <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">Registre / Inici de sessió</h1>
 
             <!-- Toggle buttons -->
             <div class="flex justify-center mt-6">
-                <div class="inline-flex rounded-full bg-gray-800/60 p-1">
+                <div class="inline-flex rounded-full bg-transparent p-1">
                     <button
                         @click="view='register'"
                         :class="view==='register' ? 'bg-[#FFA500] text-black' : 'text-[#FFA500] hover:bg-orange-500 hover:text-black'"
@@ -47,7 +90,7 @@
                     x-transition:leave="transition transform ease-in duration-200"
                     x-transition:leave-start="opacity-100 scale-100"
                     x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                    class="bg-[#1a1a1a] border-2 border-[#FFA500] rounded-xl p-6 shadow-lg">
+                    class=" border-2 border-[#FFA500] rounded-xl p-6 shadow-lg">
                     <h2 class="text-xl font-semibold text-white">Crea el teu compte</h2>
                     <p class="text-sm text-gray-300 mt-1">Obté una prova gratuïta de 7 dies</p>
 
@@ -55,19 +98,19 @@
                         <div>
                             <label for="r-username" class="text-sm text-gray-300">Nom d'usuari</label>
                             <input id="r-username" type="text" placeholder="Nom d'usuari"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-black border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-[#1a1a1a] border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <div>
                             <label for="r-email" class="text-sm text-gray-300">Correu electrònic</label>
                             <input id="r-email" type="email" placeholder="correu@exemple.com"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-black border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-#[1a1a1a] border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <div>
                             <label for="r-password" class="text-sm text-gray-300">Contrasenya</label>
                             <input id="r-password" type="password" placeholder="Contrasenya"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-black border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-[#1a1a1a] border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <button type="submit"
@@ -91,7 +134,7 @@
                     x-transition:leave="transition transform ease-in duration-200"
                     x-transition:leave-start="opacity-100 scale-100"
                     x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                    class="bg-black border-2 border-[#FFA500] rounded-xl p-6 shadow-lg">
+                    class="border-2 border-[#FFA500] rounded-xl p-6 shadow-lg">
                     <h2 class="text-xl font-semibold text-white">Inicia sessió</h2>
                     <p class="text-sm text-gray-300 mt-1">Benvingut de nou — accedeix al teu compte</p>
 
@@ -99,13 +142,13 @@
                         <div>
                             <label for="l-email" class="text-sm text-gray-300">Correu electrònic</label>
                             <input id="l-email" type="email" placeholder="correu@exemple.com"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-[#1a1a1a] border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <div>
                             <label for="l-password" class="text-sm text-gray-300">Contrasenya</label>
                             <input id="l-password" type="password" placeholder="Contrasenya"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
+                                class="w-full mt-2 px-3 py-2 rounded-md bg-[#1a1a1a] border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
                         </div>
 
                         <div class="flex items-center justify-between">
