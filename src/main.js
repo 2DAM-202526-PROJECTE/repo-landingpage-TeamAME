@@ -1,8 +1,10 @@
-import './style.css'
-import Alpine from 'alpinejs'
-import CookieConsent from './cookie.js'
+import './style.css';
+import 'vanilla-cookieconsent/dist/cookieconsent.css';  // ✅ AFEGIT
 
-Alpine.plugin(CookieConsent)
+import Alpine from 'alpinejs';
+import { initCookieConsent } from './cookie.js';
 
-window.Alpine = Alpine
-Alpine.start()
+window.Alpine = Alpine;
+Alpine.start();
+
+initCookieConsent();
