@@ -7,7 +7,7 @@
     <title>Preus</title>
 </head>
 
-<body class="pt-20 lg:pt-24">
+<body class="pt-20 lg:pt-24 bg-dark-gradient">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
 
@@ -15,10 +15,10 @@
     {{> header}}
 
     <!-- Pricing section -->
-    <section x-data="{ plan: 'monthly' }" class="bg-white bg-dark-gradient">
+    <section x-data="{ plan: 'monthly' }" class="">
         <!-- Toggle -->
         <div class="flex items-center justify-center">
-            <div class="inline-flex items-center rounded-full p-1 bg-gray-800/60 dark:bg-transparent">
+            <div class="inline-flex items-center rounded-full p-1 bg-transparent">
                 <button @click="plan='monthly'"
                     :class="plan==='monthly' ? 'bg-[#FFA500] text-black' : 'text-[#FFA500] hover:text-black hover:bg-orange-500'"
                     class="px-5 py-2 rounded-full font-semibold transition-all duration-300" aria-pressed="true">

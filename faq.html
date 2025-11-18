@@ -7,7 +7,7 @@
     <title>FAQ i Blog</title>
 </head>
 
-<body class="pt-20 lg:pt-24">
+<body class="pt-20 lg:pt-24 bg-dark-gradient">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
 
@@ -15,11 +15,11 @@
     {{> header}}
     
     <!-- FAQ Section -->
-    <section class="bg-white dark:bg-[#000000]">
+    <section class="bg-transparent]">
         <div class="container px-6 py-10 mx-auto">
-            <h1 class="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">FAQ's</h1>
+            <h1 class="text-2xl font-semibold  lg:text-3xl text-white">FAQ's</h1>
 
-            <hr class="my-6 border-gray-200 dark:border-gray-700">
+            <hr class="my-6 border-gray-700">
 
             <div x-data="{
                 openFaq: null,
@@ -71,7 +71,7 @@
                                     d="M12 4v16m8-8H4" />
                             </svg>
 
-                            <h1 class="mx-4 text-xl text-gray-700 dark:text-white" x-text="faq.pregunta"></h1>
+                            <h1 class="mx-4 text-xl text-white" x-text="faq.pregunta"></h1>
                         </button>
 
                         <div x-cloak x-show="openFaq === faq.id"
@@ -83,10 +83,10 @@
                             x-transition:leave-end="-translate-y-4 opacity-0"
                             class="flex mt-8 md:mx-10 transition-all duration-200 ease-in-out">
                             <span class="border border-[#FFA500]"></span>
-                            <p class="max-w-3xl px-4 text-gray-500 dark:text-gray-300" x-text="faq.resposta"></p>
+                            <p class="max-w-3xl px-4 text-gray-300" x-text="faq.resposta"></p>
                         </div>
 
-                        <hr x-show="index < faqs.length - 1" class="my-8 border-gray-200 dark:border-gray-700">
+                        <hr x-show="index < faqs.length - 1" class="my-8 border-gray-700">
                     </div>
                 </template>
             </div>
