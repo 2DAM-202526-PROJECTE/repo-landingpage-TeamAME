@@ -4,3 +4,47 @@ body {
     background: linear-gradient(to bottom, #000000 0%, #111111 30%, #1a1a1a 60%, #000000 100%);
     background-attachment: fixed;
 }
+
+/* === Tema per al banner de cookies (CookieConsent) === */
+#cc-main {
+  /* Tipografia coherent amb Tailwind (system-ui) */
+  --cc-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+
+  /* Colors generals */
+  --cc-bg: #050816;                 /* Fons del modal/banner */
+  --cc-text: #e5e7eb;               /* Text principal (gris clar) */
+  --cc-btn-primary-bg: #f97316;     /* Botó principal (taronja Tailwind: orange-500) */
+  --cc-btn-primary-text: #111827;   /* Text del botó principal (quasi negre) */
+  --cc-btn-primary-hover-bg: #ea580c; /* Hover (orange-600) */
+
+  --cc-btn-secondary-bg: #111827;   /* Botó secundari (fons header/dark) */
+  --cc-btn-secondary-text: #e5e7eb;
+  --cc-btn-secondary-hover-bg: #020617;
+
+  /* Toggles (switches) */
+  --cc-toggle-bg-off: #374151;
+  --cc-toggle-bg-on: #f97316;
+  --cc-toggle-knob-bg: #f9fafb;
+
+  /* Bloquets de categories dins el modal de preferències */
+  --cc-cookie-category-block-bg: #020617;
+  --cc-cookie-category-block-bg-hover: #0f172a;
+  --cc-section-border: #1f2937;
+
+  /* Overlay de fons quan està obert */
+  --cc-overlay-bg: rgba(15, 23, 42, 0.86);
+
+  /* Scrollbar del modal (si cal) */
+  --cc-webkit-scrollbar-bg: #020617;
+  --cc-webkit-scrollbar-bg-hover: #f97316;
+
+  /* Radi de cantonades: una mica rodó per anar en línia amb Tailwind rounded-xl */
+  --cc-modal-border-radius: 0.75rem;
+  --cc-btn-border-radius: 9999px; /* estil “pill” per als botons */
+}
+
+/* Opcional: forçar dark mode del plugin */
+html.cc--darkmode #cc-main {
+  --cc-bg: #020617;
+}
