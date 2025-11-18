@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-body {
-    background: linear-gradient(to bottom, #000000 0%, #111111 30%, #1a1a1a 60%, #000000 100%);
-    background-attachment: fixed;
+@layer utilities {
+    .bg-dark-gradient {
+        background: linear-gradient(to bottom, #000000 0%, #111111 30%, #1a1a1a 60%, #000000 100%);
+        background-attachment: fixed;
+    }
 }
