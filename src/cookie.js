@@ -19,10 +19,10 @@ export function initCookieConsent() {
     categories: {
       necessary: {
         enabled: true,
-        readOnly: true
+        readOnly: true,
       },
       analytics: {},
-      marketing: {}
+      marketing: {},
     },
 
     language: {
@@ -35,7 +35,7 @@ export function initCookieConsent() {
               "Utilitzem cookies per millorar l'experiència d'usuari i analitzar el tràfic.",
             acceptAllBtn: "Acceptar totes",
             acceptNecessaryBtn: "Només necessàries",
-            showPreferencesBtn: "Personalitzar"
+            showPreferencesBtn: "Personalitzar",
           },
           preferencesModal: {
             title: "Preferències de cookies",
@@ -47,17 +47,25 @@ export function initCookieConsent() {
               {
                 title: "Cookies necessàries",
                 description:
-                  "Aquestes cookies són essencials per al funcionament del lloc."
+                  "Aquestes cookies són essencials per al funcionament del lloc.",
+                linkedCategory: "necessary",
               },
               {
                 title: "Analytics",
                 description:
-                  "Cookies que recullen dades de manera anònima sobre l’ús del lloc."
-              }
-            ]
-          }
-        }
-      }
-    }
+                  "Cookies que recullen dades de manera anònima sobre l’ús del lloc.",
+                linkedCategory: "analytics",
+              },
+              {
+                title: "Marketing",
+                description:
+                  "S'utilitzen per mostrar contingut i anuncis personalitzats.",
+                linkedCategory: "marketing",
+              },
+            ],
+          },
+        },
+      },
+    },
   });
 }
