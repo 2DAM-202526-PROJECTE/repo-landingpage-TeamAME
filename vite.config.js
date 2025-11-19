@@ -5,11 +5,10 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [
     handlebars({
-      // Li diem la ruta exacta a la teva carpeta
       partialDirectory: 'src/partials',
     })
   ],
-  base: '/repo-landingpage-TeamAME/', // Això està perfecte
+  base: '/repo-landingpage-TeamAME/',
   build: {
     rollupOptions: {
       input: {
@@ -18,6 +17,10 @@ export default defineConfig({
         preus: resolve(__dirname, 'preus.html'),
         registre: resolve(__dirname, 'registre.html'),
         faq: resolve(__dirname, 'faq.html'),
+        descarges: resolve(__dirname, 'descarges.html'),
+        cookies: resolve(__dirname, 'cookies.html'),
+        termes: resolve(__dirname, 'termes.html'),
+        privacitat: resolve(__dirname, 'privacitat.html'),
         nested: resolve(__dirname, 'nested/index.html'),
       },
     },

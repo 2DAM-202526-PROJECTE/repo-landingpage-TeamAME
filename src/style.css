@@ -6,3 +6,165 @@
         background-attachment: fixed;
     }
 }
+
+/* Variables per al aspecte del cookie consent */
+#cc-main {
+  /* Fons general del banner  */
+  --cc-bg: #020617; 
+  --cc-text: #e5e7eb;
+
+  /* Botó principal */
+  --cc-btn-primary-bg: #f97316;
+  --cc-btn-primary-text: #0b1120;
+  --cc-btn-primary-hover-bg: #ea580c;
+
+  /* Botó secundari */
+  --cc-btn-secondary-bg: #020617;
+  --cc-btn-secondary-text: #e5e7eb;
+  --cc-btn-secondary-hover-bg: #020617;
+  --cc-btn-secondary-hover-text: #fed7aa;
+
+  /* Toggles */
+  --cc-toggle-bg-off: #4b5563;
+  --cc-toggle-bg-on: #f97316;
+  --cc-toggle-knob-bg: #f9fafb;
+
+  /* Blocs de categoria */
+  --cc-cookie-category-block-bg: #020617;
+  --cc-cookie-category-block-bg-hover: #0b1120;
+  --cc-cookie-category-block-border: #f97316;
+
+  /* Overlay fosc */
+  --cc-overlay-bg: rgba(2, 6, 23, 0.85);
+
+  /* Formes generals */
+  --cc-modal-border-radius: 0.75rem;
+  --cc-btn-border-radius: 9999px;
+}
+
+/* Fons i text del consent + preferències */
+#cc-main .cm,
+#cc-main .pm {
+  background-color: var(--cc-bg);
+  color: var(--cc-text);
+}
+
+/* Títol principal del banner i del de preferències */
+#cc-main .cm__title,
+#cc-main .pm__title {
+  color: #f9fafb;
+}
+
+/* Text descriptiu del banner */
+#cc-main .cm__desc,
+#cc-main .pm__desc,
+#cc-main .pm__section-desc {
+  color: #e5e7eb;
+}
+
+/* BLOCS DE LES CATEGORIES */
+
+/* Títols de cada secció */
+#cc-main .pm__section-title {
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+/* Etiquetes petites si el plugin les mostra */
+#cc-main .pm__legend,
+#cc-main .pm__badge {
+  color: #e5e7eb;
+}
+
+/* Píndola que envolta cada categoria quan té toggle (estat tancat) */
+#cc-main .pm__section--toggle .pm__section-desc-wrapper {
+  background-color: var(--cc-cookie-category-block-bg);
+  border-radius: 9999px;
+  border: 1px solid var(--cc-cookie-category-block-border);
+  color: #f9fafb;
+}
+
+/* Hover de la píndola (estat tancat) */
+#cc-main .pm__section--toggle:hover .pm__section-desc-wrapper {
+  background-color: var(--cc-cookie-category-block-bg-hover);
+}
+
+/* Evitar bordes extra del contenidor exterior */
+#cc-main .pm__section--toggle {
+  border-color: transparent;
+}
+
+/* TOGGLES (Interaccions) */
+
+#cc-main .pm__toggle {
+  background-color: var(--cc-toggle-bg-off);
+}
+
+#cc-main .pm__toggle::before {
+  background-color: var(--cc-toggle-knob-bg);
+}
+
+#cc-main .pm__toggle.pm__toggle--on {
+  background-color: var(--cc-toggle-bg-on);
+}
+
+/* BOTONS DEL BANNER */
+
+#cc-main .cm__btn,
+#cc-main .pm__btn {
+  border-radius: var(--cc-btn-border-radius);
+  font-weight: 600;
+  border: none;
+}
+
+/* Botons secundaris (Només necessàries, Guardar preferències... etc) */
+#cc-main .cm__btn--secondary,
+#cc-main .pm__btn--secondary {
+  background-color: var(--cc-btn-secondary-bg);
+  color: var(--cc-btn-secondary-text);
+}
+
+/* Estat DESACTIVAT (per ex. Guardar preferències quan no has canviat res) */
+#cc-main .cm__btn--secondary[disabled],
+#cc-main .pm__btn--secondary[disabled] {
+  opacity: 0.5;
+  border: 1px solid #4b5563;
+  color: #9ca3af;
+}
+
+/* Opcional: en mode dark del plugin, reforcem el fons */
+html.cc--darkmode #cc-main {
+  --cc-bg: #020617;
+}
+
+/* Quan un bloc (Necessary / Analytics / Marketing) està OBERT */
+#cc-main .pm__section--expanded .pm__section-desc-wrapper {
+  background-color: #e5e7eb !important;
+  border-color: #f97316;
+  color: #0f172a !important;
+}
+
+/* Títol de la secció quan està oberta */
+#cc-main .pm__section--expanded .pm__section-title {
+  color: #0f172a !important;
+}
+
+/* Descripció interna quan està desplegada */
+#cc-main .pm__section--expanded .pm__section-desc {
+  color: #0f172a !important;
+}
+
+/* Icona de fletxa quan la secció està oberta */
+#cc-main .pm__section--expanded .pm__section-arrow {
+  color: #0f172a !important;
+}
+
+/* Toggle quan està dins un bloc obert (assegurem contrast del contorn) */
+#cc-main .pm__section--expanded .pm__toggle {
+  border-color: #0f172a !important;
+}
+
+#cc-main .pm__section--toggle:hover .pm__section-title,
+#cc-main .pm__section--toggle:hover .pm__section-desc-wrapper {
+  color: #0f172a !important;
+}

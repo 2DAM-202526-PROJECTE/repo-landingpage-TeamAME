@@ -1,18 +1,71 @@
-export default function (Alpine) {
-  Alpine.data('cookieConsent', () => ({
-    accepted: false,
+import * as CookieConsent from "vanilla-cookieconsent";
 
-    init() {
-      // Comprova si la cookie ja existeix
-      const hasCookie = document.cookie.split(';').some(c => c.trim().startsWith('cookieConsent=accepted'));
-      this.accepted = hasCookie;
+// Funció per a l'ús de galetes (Apareix a la zona inferior dreta)
+export function initCookieConsent() {
+  CookieConsent.run({
+    guiOptions: {
+      consentModal: {
+        layout: "box",
+        position: "bottom right",
+        flipButtons: false,
+      },
+      preferencesModal: {
+        layout: "box",
+        position: "left",
+        flipButtons: false
+      }
     },
 
-    accept() {
-      const d = new Date();
-      d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000)); // 1 any
-      document.cookie = "cookieConsent=accepted; expires=" + d.toUTCString() + "; path=/";
-      this.accepted = true;
-    }
-  }))
+    categories: {
+      necessary: {
+        enabled: true,
+        readOnly: true,
+      },
+      analytics: {},
+      marketing: {},
+    },
+
+    language: {
+      default: "ca",
+      translations: {
+        ca: {
+          consentModal: {
+            title: "Ús de cookies",
+            description:
+              "Utilitzem cookies per millorar l'experiència d'usuari i analitzar el tràfic.",
+            acceptAllBtn: "Acceptar totes",
+            acceptNecessaryBtn: "Només necessàries",
+            showPreferencesBtn: "Personalitzar",
+          },
+          preferencesModal: {
+            title: "Preferències de cookies",
+            acceptAllBtn: "Acceptar totes",
+            acceptNecessaryBtn: "Només necessàries",
+            savePreferencesBtn: "Guardar preferències",
+            closeIconLabel: "Tancar",
+            sections: [
+              {
+                title: "Cookies necessàries",
+                description:
+                  "Aquestes cookies són essencials per al funcionament del lloc.",
+                linkedCategory: "necessary",
+              },
+              {
+                title: "Analytics",
+                description:
+                  "Cookies que recullen dades de manera anònima sobre l’ús del lloc.",
+                linkedCategory: "analytics",
+              },
+              {
+                title: "Marketing",
+                description:
+                  "S'utilitzen per mostrar contingut i anuncis personalitzats.",
+                linkedCategory: "marketing",
+              },
+            ],
+          },
+        },
+      },
+    },
+  });
 }
