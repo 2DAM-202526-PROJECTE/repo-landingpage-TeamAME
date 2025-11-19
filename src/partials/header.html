@@ -8,27 +8,32 @@
         window.addEventListener('resize', () => { isDesktop = window.innerWidth >= 1024 });
      "
      :class="scrolled 
-        ? 'bg-white/80 p-3 shadow-lg backdrop-blur-md rounded-b-2xl' 
-        : 'bg-black/90 p-6 rounded-none'"
-     class="fixed z-50 w-full top-0 start-0 end-0 mx-auto lg:flex lg:justify-between lg:items-center transition-all duration-500 ease-in-out">
+        ? 'bg-white/50 p-3 shadow-lg backdrop-blur-md rounded-b-2xl' 
+        : 'bg-black/80 p-6 rounded-none'"
+     class="fixed z-40 w-full top-0 start-0 end-0 mx-auto lg:flex lg:justify-between lg:items-center transition-all duration-500 ease-in-out">
 
-    <div class="flex items-center justify-between w-full lg:w-auto">
+    <!-- Wrapper per logo + botó -->
+    <div class="flex items-center justify-between w-full">
 
-        <a href="index.html" class="text-3xl font-black tracking-wider text-[#FFA500] uppercase hover:scale-105 transition-transform duration-300">
-            AME
+        <!-- Logo -->
+        <a href="index.html" class="">
+            <img class="size-20" src="/TextProducteLandingPage.png" alt="PlayMón Logo">
         </a>
 
+        <!-- Botó menú mòbil -->
         <div class="flex lg:hidden">
             <button x-cloak
                     @click="isOpen = !isOpen"
                     type="button"
-                    class="text-gray-500 dark:text-gray-200 hover:text-[#FFA500] dark:hover:text-orange-400 focus:outline-none"
+                    class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
                     aria-label="toggle menu">
+                <!-- Icona hamburguesa -->
                 <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
                 </svg>
 
+                <!-- Icona tancar -->
                 <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -38,6 +43,7 @@
 
     </div>
 
+    <!-- Menú (mòbil + escriptori) -->
     <div x-cloak
          x-show="isOpen || isDesktop"
          x-transition.origin-top
@@ -46,26 +52,17 @@
         <a href="index.html"
            class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
            :class="scrolled
-               ? 'text-gray-800 hover:text-orange-500'
-               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-[#FFA500]'
+               ? 'text-gray-200 hover:text-orange-500'
+               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
            ">
             Inici
-        </a>
-        
-        <a href="descarges.html"
-           class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
-           :class="scrolled
-               ? 'text-gray-800 hover:text-orange-500'
-               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-[#FFA500]'
-           ">
-            Descàrregues
         </a>
 
         <a href="preus.html"
            class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
            :class="scrolled
-               ? 'text-gray-800 hover:text-orange-500'
-               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-[#FFA500]'
+               ? 'text-gray-200 hover:text-orange-500'
+               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
            ">
             Preus
         </a>
@@ -73,8 +70,8 @@
         <a href="contact.html"
            class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
            :class="scrolled
-               ? 'text-gray-800 hover:text-orange-500'
-               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-[#FFA500]'
+               ? 'text-gray-200 hover:text-orange-500'
+               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
            ">
             Contacte
         </a>
@@ -82,15 +79,17 @@
         <a href="faq.html"
            class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
            :class="scrolled
-               ? 'text-gray-800 hover:text-orange-500'
-               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-[#FFA500]'
+               ? 'text-gray-200 hover:text-orange-500'
+               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
            ">
-            FAQ
+            FAQ/Blog
         </a>
 
+        <!-- Botó Registrar-se -->
         <a href="registre.html"
-           class="whitespace-nowrap block px-5 py-2 mt-4 text-base lg:text-lg font-bold text-center text-black capitalize transition-colors duration-300 transform bg-[#FFA500] rounded-md hover:bg-orange-400 lg:mt-0 lg:ml-4 lg:w-auto shadow-[0_0_10px_rgba(255,165,0,0.3)] hover:shadow-[0_0_20px_rgba(255,165,0,0.5)]">
+           class="whitespace-nowrap block px-5 py-2 mt-4 text-base lg:text-lg text-center  capitalize transition-colors duration-300 transform border border-[#FFA500] rounded-md hover:bg-orange-500 hover:text-black text-white lg:mt-0  lg:w-auto">
             Registrar-se
         </a>
     </div>
+
 </nav>
