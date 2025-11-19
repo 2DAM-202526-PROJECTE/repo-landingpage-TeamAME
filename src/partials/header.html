@@ -1,16 +1,77 @@
 <!--  Navbar Section -->
 <script src="/src/navbar.js"></script>
 
-<nav id="navbar"
-     x-data="{ isOpen: false, scrolled: false, isDesktop: window.innerWidth >= 1024 }"
-     x-init="
+<nav id="navbar" x-data="{
+        isOpen: false,
+        scrolled: false,
+        isDesktop: window.innerWidth >= 1024,
+        search: '',
+        pages: [
+            {
+                title: 'Inici',
+                url: 'index.html',
+                description: 'Portada, catàleg i resum del servei'
+            },
+            {
+                title: 'Preus',
+                url: 'preus.html',
+                description: 'Plans i tarifes disponibles'
+            },
+            {
+                title: 'FAQ / Blog',
+                url: 'faq.html',
+                description: 'Preguntes freqüents, dubtes, informació'
+            },
+            {
+                title: 'Contacte',
+                url: 'contact.html',
+                description: 'Formulari i informació de contacte'
+            },
+            {
+                title: 'Privacitat',
+                url: 'privacitat.html',
+                description: 'Política de privacitat i dades'
+            },
+            {
+                title: 'Cookies',
+                url: 'cookies.html',
+                description: 'Ús de cookies i preferències'
+            },
+            {
+                title: 'Termes i condicions',
+                url: 'termes.html',
+                description: 'Condicions legals del servei'
+            },
+            {
+                title: 'Registre',
+                url: 'registre.html',
+                description: 'Crea un compte nou'
+            },
+            {
+                title: 'Inici de sessió',
+                url: 'login.html',
+                description: 'Accedeix al teu compte'
+            },
+            {
+                title: 'Descàrregues',
+                url: 'descarges.html',
+                description: 'Descarrega l\'aplicació i actualitzacions'
+            }
+        ],
+        filteredPages() {
+            if (!this.search) return [];
+            const q = this.search.toLowerCase();
+            return this.pages.filter(p =>
+                (p.title + ' ' + p.description).toLowerCase().includes(q)
+            );
+        }
+     }" x-init="
         window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 });
         window.addEventListener('resize', () => { isDesktop = window.innerWidth >= 1024 });
-     "
-     :class="scrolled 
+     " :class="scrolled 
         ? 'bg-white/50 p-3 shadow-lg backdrop-blur-md rounded-b-2xl' 
         : 'bg-black/80 p-6 rounded-none'"
-     class="fixed z-40 w-full top-0 start-0 end-0 mx-auto lg:flex lg:justify-between lg:items-center transition-all duration-500 ease-in-out">
+    class="fixed z-40 w-full top-0 start-0 end-0 mx-auto lg:flex lg:justify-between lg:items-center transition-all duration-500 ease-in-out">
 
     <!-- Wrapper per logo + botó -->
     <div class="flex items-center justify-between w-full">
@@ -22,20 +83,18 @@
 
         <!-- Botó menú mòbil -->
         <div class="flex lg:hidden">
-            <button x-cloak
-                    @click="isOpen = !isOpen"
-                    type="button"
-                    class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-                    aria-label="toggle menu">
+            <button x-cloak @click="isOpen = !isOpen" type="button"
+                class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                aria-label="toggle menu">
                 <!-- Icona hamburguesa -->
-                <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
                 </svg>
 
                 <!-- Icona tancar -->
-                <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
@@ -44,23 +103,22 @@
     </div>
 
     <!-- Menú (mòbil + escriptori) -->
-    <div x-cloak
-         x-show="isOpen || isDesktop"
-         x-transition.origin-top
-         class="mt-4 flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0 lg:items-center">
+    <div x-cloak x-show="isOpen || isDesktop" x-transition.origin-top
+        class="mt-4 flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:items-center lg:space-y-0 lg:gap-4">
+
 
         <a href="index.html"
-           class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
-           :class="scrolled
-               ? 'text-gray-200 hover:text-orange-500'
-               : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
-           ">
+            class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
+            :class="scrolled
+                ? 'text-gray-200 hover:text-orange-500'
+                : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
+            ">
             Inici
         </a>
 
         <a href="preus.html"
-           class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
-           :class="scrolled
+            class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
+            :class="scrolled
                ? 'text-gray-200 hover:text-orange-500'
                : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
            ">
@@ -68,8 +126,8 @@
         </a>
 
         <a href="contact.html"
-           class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
-           :class="scrolled
+            class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
+            :class="scrolled
                ? 'text-gray-200 hover:text-orange-500'
                : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
            ">
@@ -77,17 +135,47 @@
         </a>
 
         <a href="faq.html"
-           class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
-           :class="scrolled
+            class="lg:mx-2 inline-flex items-center justify-center px-3 py-1 text-base lg:text-lg font-medium rounded-lg border border-transparent transition-colors duration-200"
+            :class="scrolled
                ? 'text-gray-200 hover:text-orange-500'
                : 'text-white hover:bg-slate-800/80 hover:border-slate-500/80 hover:text-white'
            ">
             FAQ/Blog
         </a>
 
+       <!-- Barra de cerca global (només escriptori) -->
+<div class="relative hidden lg:block lg:ml-4 lg:w-64">
+  <input
+      type="text"
+      x-model="search"
+      placeholder="Cerca a la web..."
+      class="w-full rounded-xl border border-gray-700 bg-gray-600 opacity-60 px-3 py-2 text-sm text-white
+             focus:outline-none focus:ring-2 focus:ring-[#FFA500]"
+  />
+
+  <!-- Resultats desplegables -->
+  <div
+      x-show="search.length > 1 && filteredPages().length > 0"
+      x-transition
+      class="absolute mt-2 w-full bg-gray-900 border border-gray-700 rounded-xl shadow-xl max-h-64 overflow-y-auto z-50"
+  >
+      <template x-for="page in filteredPages()" :key="page.url">
+          <a
+              :href="page.url"
+              class="block px-3 py-2 text-sm hover:bg-gray-800"
+          >
+              <div class="font-medium text-white" x-text="page.title"></div>
+              <div class="text-xs text-gray-400" x-text="page.description"></div>
+          </a>
+      </template>
+  </div>
+</div>
+
+
+
         <!-- Botó Registrar-se -->
         <a href="registre.html"
-           class="whitespace-nowrap block px-5 py-2 mt-4 text-base lg:text-lg text-center  capitalize transition-colors duration-300 transform border border-[#FFA500] rounded-md hover:bg-orange-500 hover:text-black text-white lg:mt-0  lg:w-auto">
+            class="whitespace-nowrap block px-5 py-2 mt-4 text-base lg:text-lg text-center  capitalize transition-colors duration-300 transform border border-[#FFA500] rounded-md hover:bg-orange-500 hover:text-black text-white lg:mt-0  lg:w-auto">
             Registrar-se
         </a>
     </div>
