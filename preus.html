@@ -15,7 +15,7 @@
     {{> header}}
 
     <!-- Pricing section -->
-    <section x-data="{ plan: 'monthly' }" class="">
+    <section x-data="{ plan: 'monthly' }" class="px-4 py-12 mx-auto max-w-6xl lg:py-16">
         <!-- Toggle -->
         <div class="flex items-center justify-center">
             <div class="inline-flex items-center rounded-full p-1 bg-transparent">
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <!-- Apartats: Basic + Premium -->
+        <!-- FILA 1: Basic + Premium -->
         <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2">
             <!-- Basic -->
             <div
@@ -45,7 +45,8 @@
                     </div>
                     <div class="text-right">
                         <div class="text-2xl font-extrabold text-white">
-                            <span x-html="plan==='monthly' ? '4,99<span class=&quot;text-sm font-medium ml-1&quot;> €/mes</span>' : '49,99<span class=&quot;text-sm font-medium ml-1&quot;> €/any</span>'"></span>
+                            <span
+                                x-html="plan==='monthly' ? '4,99<span class=&quot;text-sm font-medium ml-1&quot;> €/mes</span>' : '49,99<span class=&quot;text-sm font-medium ml-1&quot;> €/any</span>'"></span>
                         </div>
                         <div class="text-xs text-gray-400 mt-1">IVA inclòs</div>
                     </div>
@@ -53,17 +54,29 @@
 
                 <ul class="mt-4 space-y-2 text-gray-200 text-sm">
                     <li class="flex items-start gap-2">
-                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <span>Sense anuncis</span>
                     </li>
 
                     <li class="flex items-start gap-2">
-                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <span>Accés a la llista bàsica de contingut</span>
                     </li>
 
                     <li class="flex items-start gap-2">
-                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <span>Suport via email</span>
                     </li>
                 </ul>
@@ -74,7 +87,9 @@
                         Començar prova gratuïta de 7 dies
                     </button>
 
-                    <a href="#" class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Saltar la prova gratuïta</a>
+                    <a href="#"
+                        class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Saltar
+                        la prova gratuïta</a>
                 </div>
             </div>
 
@@ -92,7 +107,8 @@
                     </div>
                     <div class="text-right">
                         <div class="text-2xl font-extrabold text-white">
-                            <span x-html="plan==='monthly' ? '6,49<span class=&quot;text-sm font-medium ml-1&quot;> €/mes</span>' : '64,99<span class=&quot;text-sm font-medium ml-1&quot;> €/any</span>'"></span>
+                            <span
+                                x-html="plan==='monthly' ? '6,49<span class=&quot;text-sm font-medium ml-1&quot;> €/mes</span>' : '64,99<span class=&quot;text-sm font-medium ml-1&quot;> €/any</span>'"></span>
                         </div>
                         <div class="text-xs text-gray-400 mt-1">IVA inclòs</div>
                     </div>
@@ -100,17 +116,29 @@
 
                 <ul class="mt-4 space-y-2 text-gray-200 text-sm">
                     <li class="flex items-start gap-2">
-                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <span>Sense anuncis i accés a tot el catàleg</span>
                     </li>
 
                     <li class="flex items-start gap-2">
-                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <span>Transmissió a fins a 4 dispositius</span>
                     </li>
 
                     <li class="flex items-start gap-2">
-                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
                         <span>Descàrrega de vídeos en HD</span>
                     </li>
                 </ul>
@@ -121,64 +149,80 @@
                         Començar prova gratuïta de 7 dies
                     </button>
 
-                    <a href="#" class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Saltar la prova gratuïta</a>
+                    <a href="#"
+                        class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Saltar
+                        la prova gratuïta</a>
                 </div>
             </div>
         </div>
-        <!--Apartat Free-->
-        <!-- Free / Gratuït -->
-        <div class="grid grid-cols-1 md:grid-cols-3 md:col-start-2  gap-6">
-        <div
-            class="md:col-start-2 relative p-6 rounded-lg border-2 border-[#FFA500] bg-transparent hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-            <div class="flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-semibold text-white">Gratuït</h3>
-                    <p class="mt-1 text-xs text-gray-300">Accés bàsic</p>
+
+        <!-- FILA 2: Plan Gratuït centrat i separat -->
+        <div class="mt-12 flex flex-col items-center">
+            <div
+                class="w-full max-w-xl relative p-6 rounded-lg border-2 border-[#FFA500] bg-transparent hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Gratuït</h3>
+                        <p class="mt-1 text-xs text-gray-300">Accés bàsic</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-extrabold text-white">
+                            0,00<span class="text-sm font-medium ml-1"> €/mes</span>
+                        </div>
+                        <div class="text-xs text-gray-400 mt-1">Sense cost</div>
+                    </div>
                 </div>
-                <div class="text-right">
-                    <div class="text-2xl font-extrabold text-white">0,00<span class="text-sm font-medium ml-1"> €/mes</span></div>
-                    <div class="text-xs text-gray-400 mt-1">Sense cost</div>
+
+                <ul class="mt-4 space-y-2 text-gray-200 text-sm">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span>Accés limitat al catàleg</span>
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span>Anuncis inclosos</span>
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span>Suport comunitari</span>
+                    </li>
+                </ul>
+
+                <div class="mt-6">
+                    <button
+                        class="w-full px-4 py-2 mt-10 tracking-wide text-black font-semibold capitalize transition-colors duration-300 transform bg-[#FFA500] rounded-md hover:bg-orange-500 focus:outline-none focus:bg-orange-500 focus:ring focus:ring-orange-300 focus:ring-opacity-80">
+                        Start Now
+                    </button>
+
+                    <a href="#"
+                        class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Fes
+                        upgrade després</a>
                 </div>
             </div>
 
-            <ul class="mt-4 space-y-2 text-gray-200 text-sm">
-                <li class="flex items-start gap-2">
-                    <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
-                    <span>Accés limitat al catàleg</span>
-                </li>
-
-                <li class="flex items-start gap-2">
-                    <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
-                    <span>Anuncis inclosos</span>
-                </li>
-
-                <li class="flex items-start gap-2">
-                    <svg class="w-4 h-4 text-[#FFA500] shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 00-1.408-1.418L7.5 11.67 4.704 8.88a1 1 0 10-1.408 1.418l4 4a1 1 0 001.408 0l8-8z" clip-rule="evenodd"/></svg>
-                    <span>Suport comunitari</span>
-                </li>
-            </ul>
-
-            <div class="mt-6">
-                <button
-                    class="w-full px-4 py-2 mt-10 tracking-wide text-black font-semibold capitalize transition-colors duration-300 transform bg-[#FFA500] rounded-md hover:bg-orange-500 focus:outline-none focus:bg-orange-500 focus:ring focus:ring-orange-300 focus:ring-opacity-80">
-                    Start Now
-                </button>
-
-                <a href="#" class="block mt-2 text-center text-sm text-gray-300 hover:text-white transition-colors">Fes upgrade després</a>
-            </div>
+            <p class="mt-6 text-xs text-gray-400 max-w-3xl text-center">
+                Promoció de prova gratuïta vàlida per a nous usuaris. El pla es renova automàticament al final del
+                període.
+            </p>
         </div>
-
-        <!-- Note / small print -->
-        <p class="mt-6 text-xs text-gray-400 max-w-3xl mx-auto">
-            Promoció de prova gratuïta vàlida per a nous usuaris. El pla es renova automàticament al final del període.
-        </p>
     </section>
 
     <!-- Footer Section -->
     {{> _footer }}
-
-</body>
-</html>
 
 </body>
 
