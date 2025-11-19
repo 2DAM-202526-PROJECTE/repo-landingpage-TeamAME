@@ -187,8 +187,7 @@
                     <!-- Botons de selecció / descàrrega per OS -->
                     <div class="flex flex-col mt-8 gap-3 sm:flex-row sm:flex-wrap">
                         <!-- Windows -->
-                        <a href="#" @click.prevent="os = 'windows'"
-                            :class="os === 'windows'
+                        <a href="#" @click.prevent="os = 'windows'" :class="os === 'windows'
                            ? 'bg-[#FFA500] text-black shadow hover:bg-orange-500'
                            : 'border border-gray-500 text-gray-100 hover:bg-gray-800'"
                             class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors duration-200">
@@ -204,8 +203,7 @@
                         </a>
 
                         <!-- macOS -->
-                        <a href="#" @click.prevent="os = 'mac'"
-                            :class="os === 'mac'
+                        <a href="#" @click.prevent="os = 'mac'" :class="os === 'mac'
                            ? 'bg-[#FFA500] text-black shadow hover:bg-orange-500'
                            : 'border border-gray-500 text-gray-100 hover:bg-gray-800'"
                             class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors duration-200">
@@ -220,8 +218,7 @@
                         </a>
 
                         <!-- Linux -->
-                        <a href="#" @click.prevent="os = 'linux'"
-                            :class="os === 'linux'
+                        <a href="#" @click.prevent="os = 'linux'" :class="os === 'linux'
                            ? 'bg-[#FFA500] text-black shadow hover:bg-orange-500'
                            : 'border border-gray-500 text-gray-100 hover:bg-gray-800'"
                             class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors duration-200">
@@ -331,6 +328,63 @@
         </div>
     </section>
 
+    <section id="newsletter" class="px-4 py-16 mx-auto max-w-5xl lg:py-24" x-data="newsletter()">
+        <div
+            class="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 px-6 py-10 shadow-2xl sm:px-10 lg:flex lg:items-center lg:gap-10">
+            <div
+                class="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-orange-500/10 blur-3xl">
+            </div>
+
+            <div class="relative flex-1 space-y-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-orange-400">
+                    Newsletter
+                </p>
+                <h2 class="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
+                    Estigues al dia de les novetats de <span class="text-orange-400">PlayMón</span>
+                </h2>
+                <p class="text-sm text-slate-300">
+                    Rep al teu correu les últimes estrenes, recomanacions personalitzades i
+                    actualitzacions del nostre projecte de plataforma d’<span class="italic">streaming</span>.
+                    Res d’SPAM, només contingut interessant.
+                </p>
+
+                <!-- Missatges d’estat -->
+                <template x-if="success">
+                    <p class="text-sm font-medium text-emerald-400">
+                        Gràcies per subscriure’t! Hem registrat el teu correu.
+                    </p>
+                </template>
+
+                <template x-if="error">
+                    <p class="text-sm font-medium text-red-400" x-text="error"></p>
+                </template>
+            </div>
+
+            <!-- Formulari -->
+            <div class="relative mt-8 w-full max-w-md lg:mt-0">
+                <form @submit.prevent="submit" class="space-y-3">
+                    <label class="block text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
+                        Introdueix el teu correu
+                    </label>
+                    <div class="flex flex-col gap-3 sm:flex-row">
+                        <input type="email" x-model="email" required placeholder="tu@exemple.com"
+                            class="w-full rounded-full border border-slate-700 bg-slate-950/70 px-4 py-2 text-sm text-slate-100 outline-none ring-0 transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/60" />
+                        <button type="submit" :disabled="loading"
+                            class="inline-flex items-center justify-center rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-slate-950 shadow-md transition hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-70">
+                            <span x-show="!loading">Subscriu-me</span>
+                            <span x-show="loading">Enviant...</span>
+                        </button>
+                    </div>
+                    <p class="text-[11px] text-slate-400">
+                        Pots donar-te de baixa quan vulguis. Consulta la
+                        <a href="privacitat.html" class="text-orange-400 hover:underline">
+                            Política de privacitat
+                        </a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
 
 
     <cookie-consent>
