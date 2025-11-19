@@ -65,11 +65,11 @@
                 (p.title + ' ' + p.description).toLowerCase().includes(q)
             );
         }
-     }" x-init="
+    }" x-init="
         window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 });
         window.addEventListener('resize', () => { isDesktop = window.innerWidth >= 1024 });
-     " :class="scrolled 
-        ? 'bg-white/50 p-3 shadow-lg backdrop-blur-md rounded-b-2xl' 
+    " :class="scrolled
+        ? 'bg-white/50 p-3 shadow-lg backdrop-blur-md rounded-b-2xl'
         : 'bg-black/80 p-6 rounded-none'"
     class="fixed z-40 w-full top-0 start-0 end-0 mx-auto lg:flex lg:justify-between lg:items-center transition-all duration-500 ease-in-out">
 
