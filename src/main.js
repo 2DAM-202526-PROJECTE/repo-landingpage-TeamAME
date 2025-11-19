@@ -1,22 +1,33 @@
-import './style.css';
-import 'vanilla-cookieconsent/dist/cookieconsent.css';  // ✅ AFEGIT
+import "./style.css";
+import "vanilla-cookieconsent/dist/cookieconsent.css";
 
-import Alpine from 'alpinejs';
-import { initCookieConsent } from './cookie.js';
+import Alpine from "alpinejs";
+import { initCookieConsent } from "./cookie.js";
+import { registerAuth } from "./auth.js";
 
-// Simulació d'un enviament de formulari de la newsletter
+window.Alpine = Alpine;
+
+/* Cookies */
+Alpine.store("cookies", {
+  analytics: false,
+  marketing: false,
+});
+
+/* Registre */
+registerAuth(Alpine);
+
+/*  Newsletter */
 Alpine.data("newsletter", () => ({
   email: "",
   loading: false,
   success: false,
   error: "",
 
-  // Validació del correu electrònic
   isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   },
 
-  async submit() {
+  submit() {
     this.error = "";
     this.success = false;
 
@@ -35,8 +46,10 @@ Alpine.data("newsletter", () => ({
   },
 }));
 
+/* Consentiment de cookies */
+initCookieConsent(({ analytics, marketing }) => {
+  Alpine.store("cookies").analytics = analytics;
+  Alpine.store("cookies").marketing = marketing;
+});
 
-window.Alpine = Alpine;
 Alpine.start();
-
-initCookieConsent();

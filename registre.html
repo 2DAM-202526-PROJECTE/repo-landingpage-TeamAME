@@ -1,139 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registre</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registre / Inici de sessió | PlayMón</title>
 </head>
+
 <body class="pt-20 lg:pt-24 bg-dark-gradient">
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
 
-    <!--Header Section-->
-    {{> header}}
+  {{> header}}
 
-    <section class="bg-transparent">
-        <div class="container px-6 py-10 mx-auto" x-data="{ view: 'register' }">
-            <h1 class="text-3xl font-semibold text-center  capitalize lg:text-4xl text-white">Registre / Inici de sessió</h1>
+  <main class="px-4 py-12 mx-auto max-w-3xl lg:py-16" x-data="authForm()">
+    <h1 class="text-3xl font-bold text-center text-white sm:text-4xl">
+      Registre / Inici de sessió
+    </h1>
 
-            <!-- Toggle buttons -->
-            <div class="flex justify-center mt-6">
-                <div class="inline-flex rounded-full bg-transparent p-1">
-                    <button
-                        @click="view='register'"
-                        :class="view==='register' ? 'bg-[#FFA500] text-black' : 'text-[#FFA500] hover:bg-orange-500 hover:text-black'"
-                        class="px-5 py-2 rounded-full font-bold transition-all duration-300">
-                        Registrar-se
-                    </button>
+    <!-- Tabs -->
+    <div class="flex justify-center mt-6">
+      <div class="inline-flex rounded-full bg-transparent border border-[#FFA500]/70 p-1">
+        <button type="button" @click="switchMode('register')"
+          :class="mode==='register'
+            ? 'bg-[#FFA500] text-black'
+            : 'text-[#FFA500] hover:bg-orange-500/10'"
+          class="px-5 py-2 text-sm font-semibold rounded-full transition-colors duration-200">
+          Registrar-se
+        </button>
+        <button type="button" @click="switchMode('login')"
+          :class="mode==='login'
+            ? 'bg-[#FFA500] text-black'
+            : 'text-[#FFA500] hover:bg-orange-500/10'"
+          class="px-5 py-2 text-sm font-semibold rounded-full transition-colors duration-200">
+          Iniciar sessió
+        </button>
+      </div>
+    </div>
 
-                    <button
-                        @click="view='login'"
-                        :class="view==='login' ? 'bg-[#FFA500] text-black' : 'text-[#FFA500] hover:bg-orange-500 hover:text-black'"
-                        class="px-5 py-2 rounded-full font-bold transition-all duration-300">
-                        Iniciar sessió
-                    </button>
-                </div>
-            </div>
-
-            <!-- Cards -->
-            <div class="mt-8 max-w-3xl mx-auto space-y-6">
-                <!-- Register card -->
-                <div
-                    x-show="view==='register'"
-                    x-transition:enter="transition transform ease-out duration-300"
-                    x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
-                    x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                    x-transition:leave="transition transform ease-in duration-200"
-                    x-transition:leave-start="opacity-100 scale-100"
-                    x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                    class=" border-2 border-[#FFA500] rounded-xl p-6 shadow-lg">
-                    <h2 class="text-xl font-semibold text-white">Crea el teu compte</h2>
-                    <p class="text-sm text-gray-300 mt-1">Obté una prova gratuïta de 7 dies</p>
-
-                    <form class="mt-6 space-y-4">
-                        <div>
-                            <label for="r-username" class="text-sm text-gray-300">Nom d'usuari</label>
-                            <input id="r-username" type="text" placeholder="Nom d'usuari"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-[#1a1a1a] border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
-                        </div>
-
-                        <div>
-                            <label for="r-email" class="text-sm text-gray-300">Correu electrònic</label>
-                            <input id="r-email" type="email" placeholder="correu@exemple.com"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-#[1a1a1a] border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
-                        </div>
-
-                        <div>
-                            <label for="r-password" class="text-sm text-gray-300">Contrasenya</label>
-                            <input id="r-password" type="password" placeholder="Contrasenya"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-[#1a1a1a] border border-gray-700 text-[#FFA500] focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
-                        </div>
-
-                        <button type="submit"
-                            class="w-full mt-2 px-4 py-2 rounded-full bg-[#FFA500] text-black font-bold hover:bg-orange-500 transition">
-                            Registrar-se i provar 7 dies gratis
-                        </button>
-
-                        <p class="text-center text-sm text-gray-400 mt-2">
-                            Ja tens compte?
-                            <button type="button" @click="view='login'" class="font-semibold text-white hover:text-orange-500 underline ml-1">Inicia sessió</button>
-                        </p>
-                    </form>
-                </div>
-
-                <!-- Login card -->
-                <div
-                    x-show="view==='login'"
-                    x-transition:enter="transition transform ease-out duration-300"
-                    x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
-                    x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                    x-transition:leave="transition transform ease-in duration-200"
-                    x-transition:leave-start="opacity-100 scale-100"
-                    x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                    class="border-2 border-[#FFA500] rounded-xl p-6 shadow-lg">
-                    <h2 class="text-xl font-semibold text-white">Inicia sessió</h2>
-                    <p class="text-sm text-gray-300 mt-1">Benvingut de nou — accedeix al teu compte</p>
-
-                    <form class="mt-6 space-y-4">
-                        <div>
-                            <label for="l-email" class="text-sm text-gray-300">Correu electrònic</label>
-                            <input id="l-email" type="email" placeholder="correu@exemple.com"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-[#1a1a1a] border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
-                        </div>
-
-                        <div>
-                            <label for="l-password" class="text-sm text-gray-300">Contrasenya</label>
-                            <input id="l-password" type="password" placeholder="Contrasenya"
-                                class="w-full mt-2 px-3 py-2 rounded-md bg-[#1a1a1a] border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#FFA500]">
-                        </div>
-
-                        <div class="flex items-center justify-between">
-                            <a href="#" class="text-sm text-gray-400 hover:text-orange-600">Has oblidat la contrasenya?</a>
-                            <button type="submit"
-                                class="px-4 py-2 rounded-full bg-[#FFA500] text-black font-semibold hover:bg-orange-500 transition">
-                                Entrar
-                            </button>
-                        </div>
-
-                        <div class="pt-2 border-t border-gray-800 mt-2">
-                            <p class="text-center text-sm text-gray-400">O inicia sessió amb</p>
-                            <div class="flex gap-3 justify-center mt-3">
-                                <button type="button" class="px-3 py-2 rounded-md bg-[#FFA500] text-black border  hover:bg-orange-500 transition">Google</button>
-                                <button type="button" class="px-3 py-2 rounded-md bg-[#FFA500] text-black border  hover:bg-orange-500 transition">Apple</button>
-                            </div>
-                        </div>
-
-                        <p class="text-center text-sm text-gray-400 mt-3">
-                            Encara no tens compte?
-                            <button type="button" @click="view='login'" class="font-semibold text-white hover:text-orange-500 underline ml-1">Registrar-se</button>
-                        </p>
-                    </form>
-                </div>
-            </div>
+    <!-- Card -->
+    <section
+      class="mt-8 rounded-3xl border border-[#FFA500] bg-black/40 px-6 py-8 shadow-xl sm:px-8">
+      <!-- Títol i subtítol depenent del mode -->
+      <template x-if="mode === 'register'">
+        <div>
+          <h2 class="text-xl font-semibold text-white">
+            Crea el teu compte
+          </h2>
+          <p class="mt-1 text-sm text-gray-300">
+            Obtén una prova gratuïta de 7 dies.
+          </p>
         </div>
-    </section>
+      </template>
 
-    <!-- Footer Section -->
-    {{> _footer }}
+      <template x-if="mode === 'login'">
+        <div>
+          <h2 class="text-xl font-semibold text-white">
+            Inicia sessió
+          </h2>
+          <p class="mt-1 text-sm text-gray-300">
+            Accedeix al teu compte de PlayMón.
+          </p>
+        </div>
+      </template>
+
+      <!-- Missatges d’error / èxit -->
+      <div class="mt-4 space-y-2">
+        <p x-show="error" x-text="error" class="text-sm text-red-400"></p>
+        <p x-show="message" x-text="message" class="text-sm text-emerald-400"></p>
+        <template x-if="$store.auth.isLoggedIn">
+          <p class="text-xs text-gray-400">
+            Sessió actual:
+            <span class="font-semibold" x-text="$store.auth.user?.username"></span>
+            (<span x-text="$store.auth.user?.email"></span>)
+          </p>
+        </template>
+      </div>
+
+      <!-- Formulari -->
+      <form @submit.prevent="submit" class="mt-6 space-y-4">
+        <!-- Nom d'usuari només en registre -->
+        <div x-show="mode === 'register'">
+          <label class="block text-sm font-medium text-gray-200">
+            Nom d'usuari
+          </label>
+          <input type="text" x-model="username" placeholder="Nom d'usuari"
+            class="mt-1 w-full rounded-md border border-gray-700 bg-black/40 px-3 py-2 text-sm text-gray-100 placeholder-gray-500 outline-none ring-0 focus:border-[#FFA500] focus:ring-2 focus:ring-[#FFA500]/60" />
+        </div>
+
+        <!-- Correu electrònic -->
+        <div>
+          <label class="block text-sm font-medium text-gray-200">
+            Correu electrònic
+          </label>
+          <input type="email" x-model="email" placeholder="correu@exemple.com"
+            class="mt-1 w-full rounded-md border border-gray-700 bg-black/40 px-3 py-2 text-sm text-gray-100 placeholder-gray-500 outline-none ring-0 focus:border-[#FFA500] focus:ring-2 focus:ring-[#FFA500]/60" />
+        </div>
+
+        <!-- Contrasenya -->
+        <div>
+          <label class="block text-sm font-medium text-gray-200">
+            Contrasenya
+          </label>
+          <input type="password" x-model="password" placeholder="Contrasenya"
+            class="mt-1 w-full rounded-md border border-gray-700 bg-black/40 px-3 py-2 text-sm text-gray-100 placeholder-gray-500 outline-none ring-0 focus:border-[#FFA500] focus:ring-2 focus:ring-[#FFA500]/60" />
+          <p class="mt-1 text-xs text-gray-400">
+            Mínim 6 caràcters (només per a simulació, no és un sistema real de seguretat).
+          </p>
+        </div>
+
+        <!-- Confirmació només en registre -->
+        <div x-show="mode === 'register'">
+          <label class="block text-sm font-medium text-gray-200">
+            Repeteix la contrasenya
+          </label>
+          <input type="password" x-model="confirmPassword" placeholder="Repeteix la contrasenya"
+            class="mt-1 w-full rounded-md border border-gray-700 bg-black/40 px-3 py-2 text-sm text-gray-100 placeholder-gray-500 outline-none ring-0 focus:border-[#FFA500] focus:ring-2 focus:ring-[#FFA500]/60" />
+        </div>
+
+        <!-- Botó -->
+        <div class="pt-2">
+          <button type="submit" :disabled="loading"
+            class="w-full rounded-full bg-[#FFA500] px-4 py-2 text-sm font-semibold text-black shadow-lg transition hover:bg-orange-500 disabled:cursor-not-allowed disabled:opacity-70">
+            <span x-show="mode === 'register' && !loading">
+              Registrar-se i provar 7 dies gratis
+            </span>
+            <span x-show="mode === 'login' && !loading">
+              Iniciar sessió
+            </span>
+            <span x-show="loading">Processant...</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Enllaç per canviar de mode -->
+      <p class="mt-6 text-sm text-center text-gray-300">
+        <span x-show="mode === 'register'">
+          Ja tens compte?
+          <button type="button" @click="switchMode('login')"
+            class="font-semibold text-white underline-offset-2 hover:underline">
+            Inicia sessió
+          </button>
+        </span>
+
+        <span x-show="mode === 'login'">
+          Encara no tens compte?
+          <button type="button" @click="switchMode('register')"
+            class="font-semibold text-white underline-offset-2 hover:underline">
+            Registra't ara
+          </button>
+        </span>
+      </p>
+    </section>
+  </main>
+
+  {{> _footer }}
 </body>
+
 </html>
