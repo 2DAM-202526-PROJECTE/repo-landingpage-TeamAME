@@ -7,39 +7,34 @@
     }
 }
 
-/* ================================
-   TEMA COOKIECONSENT PLAYMÓN
-   (fons fosc + taronja, text clar)
-   ================================ */
-
-/* Variables de tema del plugin */
+/* Variables per al aspecte del cookie consent */
 #cc-main {
-  /* Fons general del banner / modal */
-  --cc-bg: #020617;        /* molt fosc, com el header */
-  --cc-text: #e5e7eb;      /* gris clar */
+  /* Fons general del banner  */
+  --cc-bg: #020617; 
+  --cc-text: #e5e7eb;
 
-  /* Botó principal (Acceptar totes, etc.) */
+  /* Botó principal */
   --cc-btn-primary-bg: #f97316;
   --cc-btn-primary-text: #0b1120;
   --cc-btn-primary-hover-bg: #ea580c;
 
-  /* Botó secundari (Només necessàries, Guardar preferències...) */
+  /* Botó secundari */
   --cc-btn-secondary-bg: #020617;
   --cc-btn-secondary-text: #e5e7eb;
   --cc-btn-secondary-hover-bg: #020617;
   --cc-btn-secondary-hover-text: #fed7aa;
 
-  /* Toggles (interruptors) */
-  --cc-toggle-bg-off: #4b5563;    /* gris quan està OFF */
-  --cc-toggle-bg-on: #f97316;     /* taronja quan està ON */
-  --cc-toggle-knob-bg: #f9fafb;   /* boleta blanca */
+  /* Toggles */
+  --cc-toggle-bg-off: #4b5563;
+  --cc-toggle-bg-on: #f97316;
+  --cc-toggle-knob-bg: #f9fafb;
 
-  /* Blocs de categoria (píndoles) */
+  /* Blocs de categoria */
   --cc-cookie-category-block-bg: #020617;
   --cc-cookie-category-block-bg-hover: #0b1120;
   --cc-cookie-category-block-border: #f97316;
 
-  /* Overlay fosc del darrere */
+  /* Overlay fosc */
   --cc-overlay-bg: rgba(2, 6, 23, 0.85);
 
   /* Formes generals */
@@ -47,27 +42,27 @@
   --cc-btn-border-radius: 9999px;
 }
 
-/* Fons i text del consent modal + preferences modal */
+/* Fons i text del consent + preferències */
 #cc-main .cm,
 #cc-main .pm {
   background-color: var(--cc-bg);
   color: var(--cc-text);
 }
 
-/* Títol principal del banner i del modal de preferències */
+/* Títol principal del banner i del de preferències */
 #cc-main .cm__title,
 #cc-main .pm__title {
-  color: #f9fafb;      /* quasi blanc */
+  color: #f9fafb;
 }
 
-/* Text descriptiu del banner i del modal */
+/* Text descriptiu del banner */
 #cc-main .cm__desc,
 #cc-main .pm__desc,
 #cc-main .pm__section-desc {
-  color: #e5e7eb;      /* gris clar */
+  color: #e5e7eb;
 }
 
-/* ===== BLOCS DE CATEGORIA (Necessary / Analytics / Marketing) ===== */
+/* BLOCS DE LES CATEGORIES */
 
 /* Títols de cada secció */
 #cc-main .pm__section-title {
@@ -75,7 +70,7 @@
   font-weight: 600;
 }
 
-/* Llegenda / etiquetes petites si el plugin les mostra */
+/* Etiquetes petites si el plugin les mostra */
 #cc-main .pm__legend,
 #cc-main .pm__badge {
   color: #e5e7eb;
@@ -86,7 +81,7 @@
   background-color: var(--cc-cookie-category-block-bg);
   border-radius: 9999px;
   border: 1px solid var(--cc-cookie-category-block-border);
-  color: #f9fafb;      /* text blanc dins la píndola */
+  color: #f9fafb;
 }
 
 /* Hover de la píndola (estat tancat) */
@@ -99,7 +94,7 @@
   border-color: transparent;
 }
 
-/* ===== TOGGLES (interruptors ON/OFF) ===== */
+/* TOGGLES (Interaccions) */
 
 #cc-main .pm__toggle {
   background-color: var(--cc-toggle-bg-off);
@@ -113,7 +108,7 @@
   background-color: var(--cc-toggle-bg-on);
 }
 
-/* ===== BOTONS DEL BANNER I DEL MODAL ===== */
+/* BOTONS DEL BANNER */
 
 #cc-main .cm__btn,
 #cc-main .pm__btn {
@@ -122,7 +117,7 @@
   border: none;
 }
 
-/* Botons secundaris (Només necessàries, Guardar preferències quan està actiu) */
+/* Botons secundaris (Només necessàries, Guardar preferències... etc) */
 #cc-main .cm__btn--secondary,
 #cc-main .pm__btn--secondary {
   background-color: var(--cc-btn-secondary-bg);
@@ -144,9 +139,9 @@ html.cc--darkmode #cc-main {
 
 /* Quan un bloc (Necessary / Analytics / Marketing) està OBERT */
 #cc-main .pm__section--expanded .pm__section-desc-wrapper {
-  background-color: #e5e7eb !important;   /* gris clar */
-  border-color: #f97316;                  /* vora taronja */
-  color: #0f172a !important;              /* text fosc */
+  background-color: #e5e7eb !important;
+  border-color: #f97316;
+  color: #0f172a !important;
 }
 
 /* Títol de la secció quan està oberta */
@@ -171,5 +166,5 @@ html.cc--darkmode #cc-main {
 
 #cc-main .pm__section--toggle:hover .pm__section-title,
 #cc-main .pm__section--toggle:hover .pm__section-desc-wrapper {
-  color: #0f172a !important; /* text fosc quan el fons és clar */
+  color: #0f172a !important;
 }

@@ -1,6 +1,6 @@
-// src/cookie.js
 import * as CookieConsent from "vanilla-cookieconsent";
 
+// Funció per a l'ús de galetes (Apareix a la zona inferior dreta)
 export function initCookieConsent() {
   CookieConsent.run({
     guiOptions: {
